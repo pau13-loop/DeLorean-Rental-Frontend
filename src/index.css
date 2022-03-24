@@ -1,0 +1,130 @@
+/* HTML ELEMENTS */
+
+html {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, lightblue, lightgreen);
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Arial";
+}
+
+/* SHARED STYLES */
+
+.btn {
+    width: 300px;
+    height: 150px;
+    border-radius: 25px;
+}
+
+/* HEADER */
+
+#header {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: auto;
+    grid-template-areas: "burguer title btn";
+    align-items: center;
+    border-bottom: 3px solid black;
+}
+
+
+.iconHeader {
+    font-size: 70px;
+    grid-area: burguer;
+}
+
+.h1 {
+    font-size: 80px;
+    grid-area: title;
+    text-align: center;
+}
+
+/* CONTENT */
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    gap: 100px;
+}
+
+.containerIconContent {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 100%;
+}
+
+.btnRow {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.textBtn {
+    font-size: 40px;
+}
+
+/* CARDS CONTENT */
+
+.stock {
+    /* padding: 25px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px;
+}
+
+.card {
+    width: 40%;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.titleCard {
+    font-size: 40px;
+}
+
+.imgCard {
+    width: 100%;
+    height: 100%;
+}
+
+.descriptionCard {
+    font-size: 25px;
+    margin: 25px 15px;
+}
+
+.footerCard {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 35px;
+}
+
+/* .btnContainer {
+    height: 100%;
+    width: auto;
+} */
+
+.btnHeader {
+    /* margin: auto; */
+    /* height: 100%;
+    width: 20%; */
+}
+
+/* .textButtonHeader {
+    padding: 100px;
+} */
