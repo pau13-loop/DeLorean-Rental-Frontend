@@ -40,19 +40,25 @@ body {
     grid-area: burguer;
 }
 
-.h1 {
+.titleHeader {
     font-size: 80px;
     grid-area: title;
     text-align: center;
 }
 
+.btnHeader {
+    /* margin: auto; */
+    /* height: 100%;
+    width: 20%; */
+}
+
 /* CONTENT */
 
-#content {
+.buttonHandlers {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin: 100px 0;
     gap: 100px;
 }
 
@@ -67,7 +73,7 @@ body {
 }
 
 .btnRow {
-    width: 75%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
 }
@@ -76,13 +82,16 @@ body {
     font-size: 40px;
 }
 
-/* CARDS CONTENT */
+.iconRefresh {
+    font-size: 100px;
+}
+
+/* CARD */
 
 .stock {
-    /* padding: 25px; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     gap: 100px;
 }
 
@@ -114,17 +123,60 @@ body {
     padding: 35px;
 }
 
-/* .btnContainer {
-    height: 100%;
-    width: auto;
-} */
+/* RESPONISVE */
 
-.btnHeader {
-    /* margin: auto; */
-    /* height: 100%;
-    width: 20%; */
+@media (min-width: 768px) {
+    #header {
+        width: 90%;
+        padding: 15px;
+        border-bottom: 1px solid black;
+    }
+
+    .iconHeader {
+        font-size: 30px;
+    }
+
+    .titleHeader {
+        font-size: 35px;
+    }
+
+    .buttonHandlers {
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 50px 0;
+    }
+
+    .btn {
+        width: 200px;
+        height: 50px;
+    }
+
+    .btnRow {
+        width: auto;
+        flex-direction: column;
+        gap: 30px
+    }
+
+    .textBtn {
+        font-size: 15px;
+    }
+
+    .iconRefresh {
+        font-size: 40px;
+    }
+
+    .containerIconContent {
+        width: 75px;
+        height: 75px;
+    }
+
+    .stock {
+        margin: 50px
+    }
+
+    /* CARD */
+
+    .card {
+        width: 25%;
+    }
 }
-
-/* .textButtonHeader {
-    padding: 100px;
-} */
