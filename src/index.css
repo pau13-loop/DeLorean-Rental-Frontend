@@ -34,10 +34,21 @@ body {
     border-bottom: 3px solid black;
 }
 
+.leftHandHeader {
+    display: flex;
+    align-items: center;
+}
 
 .iconHeader {
     font-size: 70px;
     grid-area: burguer;
+}
+
+.navigationLinks {
+    grid-area: burguer;
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
 }
 
 .titleHeader {
@@ -52,135 +63,21 @@ body {
     width: 20%; */
 }
 
-/* CONTENT */
-
-.buttonHandlers {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 100px 0;
-    gap: 100px;
-}
-
-.containerIconContent {
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black;
-    border-radius: 100%;
-}
-
-.btnRow {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.textBtn {
-    font-size: 40px;
-}
-
-.iconRefresh {
-    font-size: 100px;
-}
-
-/* CARD */
-
-.stock {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 100px;
-}
-
-.card {
-    width: 40%;
-    border: 2px solid black;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.titleCard {
-    font-size: 40px;
-}
-
-.imgCard {
-    width: 100%;
-    height: 100%;
-}
-
-.descriptionCard {
-    font-size: 25px;
-    margin: 25px 15px;
-}
-
-.footerCard {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    padding: 35px;
-}
-
 /* RESPONISVE */
 
 @media (min-width: 768px) {
     #header {
-        width: 90%;
-        padding: 15px;
+        width: 95%;
+        padding: unset;
         border-bottom: 1px solid black;
     }
 
     .iconHeader {
-        font-size: 30px;
+        font-size: 25px;
+        margin-left: 1rem;
     }
 
     .titleHeader {
         font-size: 35px;
-    }
-
-    .buttonHandlers {
-        flex-direction: row;
-        justify-content: space-evenly;
-        margin: 50px 0;
-    }
-
-    .btn {
-        width: 200px;
-        height: 50px;
-    }
-
-    .btnRow {
-        width: auto;
-        flex-direction: column;
-        gap: 30px
-    }
-
-    .textBtn {
-        font-size: 15px;
-    }
-
-    .iconRefresh {
-        font-size: 40px;
-    }
-
-    .containerIconContent {
-        width: 75px;
-        height: 75px;
-    }
-
-    .stock {
-        margin: 50px
-    }
-
-    /* CARD */
-
-    .card {
-        width: 25%;
-    }
-
-    .imgCard {
-        height: 35%;
     }
 }
