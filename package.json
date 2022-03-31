@@ -34,6 +34,8 @@
     "homepage": "https://github.com/pau13-loop/DeLorean-Rental-Frontend#readme",
     "devDependencies": {
         "eslint": "^8.11.0",
-        "nodemon": "^2.0.15"
+        "nodemon": "^2.0.15",
+        "webpack": "^5.70.0",
+        "webpack-cli": "^4.9.2"
     }
 }
