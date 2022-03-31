@@ -5,7 +5,8 @@
     "main": "/src/server.js",
     "scripts": {
         "test": "test",
-        "start": "node ./bin/www",
+        "start": "nodemon app.js",
+        "server": "nodemon ./pruebas-server/index.js",
         "devstart": "nodemon ./bin/www",
         "lint": "npm run lint",
         "startclient": "nodemon server.js"

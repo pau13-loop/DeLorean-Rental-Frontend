@@ -179,4 +179,8 @@ body {
     .card {
         width: 25%;
     }
+
+    .imgCard {
+        height: 35%;
+    }
 }
