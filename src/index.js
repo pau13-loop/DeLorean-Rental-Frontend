@@ -14,6 +14,20 @@ async function getStock() {
     loadStock();
 }
 
+async function deleteItemStock(item, indexItem) {
+    const response = await deleteItemInventory(item.id);
+    if (response) {
+        const itemCard = document.getElementById(`item${indexItem}`);
+        itemCard.remove();
+    }
+}
+
+async function updateStock() {
+    stock = await updateItemsInventory();
+    console.log('response: ', stock);
+    loadStock();
+}
+
 function loadStock() {
     const stockContent = document.getElementById('stockContent');
 
@@ -40,20 +54,6 @@ function loadStock() {
         </div>
         `;
     }).join(" ");
-}
-
-async function deleteItemStock(item, indexItem) {
-    const response = await deleteItemInventory(item.id);
-    if (response) {
-        const itemCard = document.getElementById(`item${indexItem}`);
-        itemCard.remove();
-    }
-}
-
-async function updateStock() {
-    stock = await updateItemsInventory();
-    console.log('response: ', stock);
-    loadStock();
 }
 
 

@@ -7,12 +7,14 @@ let fs = require("fs");
 let html;
 let css;
 let js;
+let gateway;
 
 fs.readFile("./src/index.html", (err, data) => {
     if (err) {
         console.log('Error: ', err)
         throw err;
     }
+    console.log('Data: ', data);
     html = data;
 });
 
@@ -30,6 +32,14 @@ fs.readFile('./src/index.js', function (err, data) {
     js = data;
 });
 
+fs.readFile('./src/gateways.js', function (err, data) {
+    if (err) {
+        throw err;
+    }
+    gateway = data;
+});
+
+
 http.createServer((req, res) => {
     res.statusCode = 200;
     if (req.url.indexOf('.css') != -1) {
@@ -41,6 +51,12 @@ http.createServer((req, res) => {
     if (req.url.indexOf('index.js') != -1) {
         res.writeHead(200, { 'Content-Type': 'text/javascript' });
         res.write(js);
+        res.end();
+        return;
+    }
+    if (req.url.indexOf('gateway.js') != -1) {
+        res.writeHead(200, { 'Content-Type': 'text/javascript' });
+        res.write(gateway);
         res.end();
         return;
     }

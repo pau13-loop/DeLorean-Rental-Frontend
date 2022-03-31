@@ -1,31 +1,41 @@
 
 const Gateway = (function singletonGateway() {
+    // TODO: Gateway Module
+    const serverip = "127.0.0.1:3000";
 
+    const miHeaders = new Headers();
 
-
-    let serverip = "127.0.0.1:3000";
-
-    var miHeaders = new Headers();
-
-    var miInit = {
+    const miInit = {
         method: "GET",
         mode: "cors",
-        // headers: {
-        //     'Content-Type': 'application/json'
-        // },
         headers: miHeaders,
-        // cambiarlo a force- cache => carga del disco
         cache: "default",
     };
 
-    const inventario = () => {
-        // function inventario() {
-        fetch(`http://${serverip}/vehicle`, miInit)
+    const miInitDelete = {
+        method: "DELETE",
+        mode: "cors",
+        headers: miHeaders,
+        cache: "default",
+    };
+
+    const miInitUpdate = {
+        method: "PUT",
+        mode: "cors",
+        headers: miHeaders,
+        cache: "default",
+    };
+
+
+    const inventory = () => {
+        return fetch(`http://${serverip}/vehicle`, miInit)
             .then((response) => {
                 if (response.ok) {
                     console.log("Response Status:", response.status);
                     console.log("Reponse statuts text:", response.statusText);
-                    response.json().then((body) => logItems(body.data));
+                    return response.json().then((body) => {
+                        return body.data
+                    });
                 }
                 else {
                     console.log("Response Status:", response.status);
@@ -37,24 +47,52 @@ const Gateway = (function singletonGateway() {
             });
     }
 
-
-    // intentar cachear con la cabecera mirando network de chrome
-
-    function logItems(items) {
-        const itemsList = document.querySelector("#itemList");
-        itemList.innerHTML = items
-            .map((item, i) => {
-                return `
-                    <li>
-                        <p id="item${i}"> ${item.model}
-                                        ${item.brand}</p>
-                    </li>
-                    `;
+    const deleteItemInventory = (idItem) => {
+        return fetch(`http://${serverip}/vehicle/delete/id/${idItem}`, miInitDelete)
+            .then((response) => {
+                if (response.ok) {
+                    console.log("Response Status:", response.status);
+                    console.log("Reponse statuts text:", response.statusText);
+                    return true;
+                }
+                else {
+                    console.log("Response Status:", response.status);
+                    console.log("Reponse statuts text:", response.statusText);
+                    return false;
+                }
             })
-            .join("");
+            .catch((error) => {
+                console.log(error.message);
+                return false;
+            });
     }
+
+    const updateItemsInventory = () => {
+        return fetch(`http://${serverip}/vehicle/update/stock/discount`, miInitUpdate)
+            .then((response) => {
+                if (response.ok) {
+                    console.log("Response Status:", response.status);
+                    console.log("Reponse statuts text:", response.statusText);
+                    return response.json().then((body) => {
+                        return body.data
+                    });
+                }
+                else {
+                    console.log("Response Status:", response.status);
+                    console.log("Reponse statuts text:", response.statusText);
+                    return false;
+                }
+            })
+            .catch((error) => {
+                console.log(error.message);
+                return false;
+            });
+    }
+
     return {
-        inventario
+        inventory,
+        deleteItemInventory,
+        updateItemsInventory
     };
 })();
 
