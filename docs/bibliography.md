@@ -51,3 +51,11 @@
 ##### Scripts: async, defer
 
 > https://javascript.info/script-async-defer
+
+##### Webpack
+
+> https://webpack.js.org/concepts/
+
+##### Best tutorial I could find to build an SPA with JS, HTML and CSS
+
+> https://www.youtube.com/watch?v=D9avX-jtIPM&ab_channel=FaztCode
