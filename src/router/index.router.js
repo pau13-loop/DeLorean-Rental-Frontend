@@ -1,4 +1,3 @@
-import { pages } from '../controllers/index';
 import { views } from '../views/index';
 
 let content = document.getElementById('content');
@@ -11,12 +10,13 @@ const router = (routeName) => {
             return content;
         }
         case '#/stock':
-            content.appendChild(pages.home());
-            return content
+            // content.appendChild(views.stockView());
+            // return content
+            break;
         case '#/about':
             return console.log('About');
         default:
-            return console.log('404');
+            content.appendChild(views.notFoundView());
     }
 }
 

@@ -1,7 +1,9 @@
-import homeBtnRow from './homeBtnRow/homeBtnRow';
+import stockBtnRow from './stockBtnRow/stockBtnRow';
+import inventoryContainer from './inventory/inventory';
 
-const stockComponents = {
-    homeBtnRow: homeBtnRow
+const stockComponent = {
+    stockBtnRow: stockBtnRow,
+    inventoryContainer: inventoryContainer
 }
 
-export { stockComponents };
+export { stockComponent };
