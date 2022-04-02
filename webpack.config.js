@@ -22,7 +22,12 @@ module.exports = {
             {
                 test: /\.html$/i,
                 loader: 'html-loader'
-            }
+            },
+            {
+                //IMAGE LOADER
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                loader: 'file-loader'
+            },
         ]
     },
     mode: 'development'
