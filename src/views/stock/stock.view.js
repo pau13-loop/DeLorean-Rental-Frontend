@@ -56,9 +56,7 @@ export default () => {
             </div>
 
             <div class="footerCard">
-
-            <button class="btnDeleteItemInventory">Borrame !</button>
-                <i id="btnDeleteItemStock" class="fa-solid fa-trash fa-2x"></i>
+                <i id="btnDeleteItemStock" class="btnDeleteItemInventory fa-solid fa-trash fa-2x"></i>
                 <i class="fa-solid fa-circle-info fa-2x"></i>
             </div>
         </div>
