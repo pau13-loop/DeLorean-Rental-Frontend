@@ -1,7 +1,9 @@
-import stockView from './stock/stock';
+import stockView from './stock/stock.view';
+import notFoundView from './404/not-found.view';
 
 const views = {
-    stockView: stockView
+    stockView: stockView,
+    notFoundView: notFoundView
 }
 
 export { views };
