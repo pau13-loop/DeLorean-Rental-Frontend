@@ -5,18 +5,18 @@ let content = document.getElementById('content');
 const router = (routeName) => {
     content.innerHTML = "";
     switch (routeName) {
-        case '#/': {
+        case '#/':
+            content.appendChild(views.homeView());
+            return content;
+        case '#/stock':
             content.appendChild(views.stockView());
             return content;
-        }
-        case '#/stock':
-            // content.appendChild(views.stockView());
-            // return content
-            break;
-        case '#/about':
-            return console.log('About');
+        case '#/basket':
+            content.appendChild(views.basketView());
+            return content;
         default:
             content.appendChild(views.notFoundView());
+            return content;
     }
 }
 
