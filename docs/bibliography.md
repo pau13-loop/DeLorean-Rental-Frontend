@@ -59,3 +59,27 @@
 ##### Best tutorial I could find to build an SPA with JS, HTML and CSS
 
 > https://www.youtube.com/watch?v=D9avX-jtIPM&ab_channel=FaztCode
+
+###### Element.id is not a function (Error)
+
+> https://bobbyhadz.com/blog/javascript-setattribute-is-not-a-function
+
+##### onClick and onLoad event listeners
+
+> https://www.freecodecamp.org/news/javascript-dom-events-onclick-and-onload/
+
+###### e.preventDefault and e.stopPropagation
+
+> https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+
+> https://www.geeksforgeeks.org/how-to-stop-event-propagation-with-inline-onclick-attribute-in-javascript/
+
+> https://css-tricks.com/lodge/learn-jquery/08-preventdefault-stoppropagation-return-false/
+
+> (VIDEO) https://www.youtube.com/watch?v=UWCvbwo9IRk&ab_channel=dcode
+
+##### Itearate a NodeList of elements with same className
+
+> https://www.javascripttutorial.net/dom/selecting/selecting-elements-by-class-name/
+
+> https://bobbyhadz.com/blog/javascript-typeerror-foreach-is-not-a-function

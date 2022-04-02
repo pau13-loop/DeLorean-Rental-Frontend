@@ -34,6 +34,10 @@ This dependencies are to be able to load the HTML
 
 > $ npm i html-loader -D
 
+This dependency allows us to see images
+
+> $ npm install file-loader --save-dev
+
 The **_-D_** indicates is going to be installed as a development dependency
 
 ###### To make webpack compile the code to send it to the server
