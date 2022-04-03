@@ -91,3 +91,21 @@
 > https://softauthor.com/css-make-a-div-height-full-screen/#:~:text=Div%20Horizontally%20%26%20Vertically-,position%3Aabsolute,div%20takes%20the%20full%20screen.
 
 > https://www.tutorialrepublic.com/faq/how-to-overlay-one-div-over-another-div-using-css.php#:~:text=You%20can%20use%20the%20CSS,%2C%20fixed%20%2C%20or%20relative%20).
+
+##### Webpack dotenv
+
+> https://www.npmjs.com/package/dotenv-webpack
+
+##### Alert, prompt and confirm window dialogs
+
+> https://javascript.info/alert-prompt-confirm
+
+> https://developer.mozilla.org/es/docs/Web/API/Window/alert
+
+> https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt
+
+> https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm
+
+##### Session Storage
+
+> https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
