@@ -1,9 +1,11 @@
-import stockBtnRow from './stockBtnRow/stockBtnRow';
-import inventoryContainer from './inventory/inventory';
+import stockBtnRow from './stock-btn-row/stock-btn-row';
+import inventory from './inventory/inventory';
+import createForm from './create-form/create-form';
 
 const stockComponent = {
     stockBtnRow: stockBtnRow,
-    inventoryContainer: inventoryContainer
+    inventory: inventory,
+    createForm: createForm
 }
 
 export { stockComponent };
