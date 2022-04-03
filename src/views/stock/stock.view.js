@@ -7,16 +7,41 @@ export default () => {
     stockView.setAttribute('id', 'stockContent');
 
     //* No acepta un innerHtml a pelo porque llamamos a una función que nos devuelve un obj HTML
+    stockView.appendChild(stockComponent.createForm());
     stockView.appendChild(stockComponent.stockBtnRow());
-    stockView.appendChild(stockComponent.inventoryContainer());
+    stockView.appendChild(stockComponent.inventory());
 
     const refreshButton = stockView.querySelector('#refreshButton');
     const updateStockButton = stockView.querySelector('#updateBtn');
     refreshButton.addEventListener('click', getStock);
     updateStockButton.addEventListener('click', updateStock);
 
+    const submitButtonCreateForm = stockView.querySelector('#submitBtnCreateForm');
+    submitButtonCreateForm.addEventListener('click', function (e) {
+        e.preventDefault();
+        postItemStock();
+    });
+
     // Handler Functions
     let stock = undefined;
+
+    const serverip = "127.0.0.1:3000";
+
+    async function postItemStock() {
+        const valuesForm = document.forms.createItemStockForm.elements;
+
+        const itemTemp = {
+            model: valuesForm.model.value,
+            brand: valuesForm.brand.value,
+            category: valuesForm.category.value,
+            year: parseInt(valuesForm.year.value),
+            price: parseInt(valuesForm.price.value),
+            ORIGINAL_PRICE: parseInt(valuesForm.price.value),
+        }
+
+        await GatewayStock.postItemInventory(itemTemp);
+        getStock();
+    }
 
     async function getStock() {
         stock = await GatewayStock.inventory();

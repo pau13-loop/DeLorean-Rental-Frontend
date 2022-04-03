@@ -89,10 +89,39 @@ const GatewayStock = (function singletonGatewayStock() {
             });
     }
 
+    const postItemInventory = (newItem) => {
+        return fetch(`http://${serverip}/vehicle/create`, {
+            method: "POST",
+            mode: "cors",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newItem)
+        })
+            .then((response) => {
+                if (response.ok) {
+                    console.log("Response Status:", response.status);
+                    console.log("Reponse statuts text:", response.statusText);
+                    console.log('Response: ', response);
+                    return response.json().then((body) => {
+                        return body.data
+                    });
+                }
+                else {
+                    console.log("Response Status:", response.status);
+                    console.log("Reponse statuts text:", response.statusText);
+                }
+            })
+            .catch((error) => {
+                console.log(error.message);
+            });
+    }
+
     return {
         inventory,
         deleteItemInventory,
-        updateItemsInventory
+        updateItemsInventory,
+        postItemInventory
     };
 })();
 
