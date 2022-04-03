@@ -32,6 +32,15 @@ export default () => {
     // Inventory COMPONENT
     stockView.appendChild(stockComponent.inventory());
 
+    // Session Storage
+    function addItemToLocalStorage(i) {
+        if (window.confirm('Do you really want to add this item to your basket ?')) {
+            let basketList = JSON.parse(localStorage.getItem('basketList'));
+            basketList = [...basketList, stock[i]];
+            localStorage.setItem('basketList', JSON.stringify(basketList));
+        }
+    }
+
     // Stock logic 
     let stock = undefined;
 
@@ -119,12 +128,15 @@ export default () => {
             </div>
 
             <div class="footerCard">
-                <i id="btnDeleteItemStock" class="btnDeleteItemInventory fa-solid fa-trash fa-2x"></i>
-                <i class="fa-solid fa-circle-info fa-2x"></i>
-            </div>
+                <i class="btnDeleteItemInventory fa-solid fa-trash fa-2x"></i>
+                <i class="btnAddItemInventory fa-solid fa-circle-plus fa-2x"></i>
+                </div>
         </div>
-        `;
+                `;
         }).join(" ");
+
+        //TODO: add modal info about vehicle when press icon
+        // <i class="fa-solid fa-circle-info fa-2x"></i>
 
         const deleteButtons = stockContent.getElementsByClassName('btnDeleteItemInventory');
         Array.from(deleteButtons).forEach((button, i) => {
@@ -133,6 +145,14 @@ export default () => {
                 deleteItemStock(i);
             });
         });
+
+        const addButtons = stockContent.getElementsByClassName('btnAddItemInventory');
+        Array.from(addButtons).forEach((button, i) => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                addItemToLocalStorage(i);
+            })
+        })
     }
 
     return stockView;

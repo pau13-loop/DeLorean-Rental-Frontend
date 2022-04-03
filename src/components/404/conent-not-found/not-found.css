@@ -1,7 +1,16 @@
-.notFoundHeader {
-    color: red;
+.containerNotFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.notFoundMessage {
-    color: grey;
+.containerHeaderNotFound {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    font-size: 35px;
+}
+
+.notFoundHeader {
+    color: red;
 }
