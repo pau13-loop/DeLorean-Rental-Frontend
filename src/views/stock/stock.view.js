@@ -1,4 +1,5 @@
 import { stockComponent } from "../../components/stock";
+import { spinnerLoaderComponent } from "../../components/shared/index";
 import { GatewayStock } from "../../gateways/stock/stock.gateway";
 import DeLoreanImg from '../../../assets/img/delorean.jpeg';
 
@@ -6,15 +7,13 @@ export default () => {
     const stockView = document.createElement('div');
     stockView.setAttribute('id', 'stockContent');
 
-    //* No acepta un innerHtml a pelo porque llamamos a una función que nos devuelve un obj HTML
-    stockView.appendChild(stockComponent.createForm());
-    stockView.appendChild(stockComponent.stockBtnRow());
-    stockView.appendChild(stockComponent.inventory());
+    // Spinner Loader COMPONENT
+    //* No acepta un innerHtml a pelo porque llamamos a una función que nos devuelve un obj NodeElement
+    stockView.appendChild(spinnerLoaderComponent.spinnerLoader());
+    const spinnerLoaderElement = stockView.querySelector('#containerSpinnerLoader');
 
-    const refreshButton = stockView.querySelector('#refreshButton');
-    const updateStockButton = stockView.querySelector('#updateBtn');
-    refreshButton.addEventListener('click', getStock);
-    updateStockButton.addEventListener('click', updateStock);
+    // Create Form COMPONENT
+    stockView.appendChild(stockComponent.createForm());
 
     const submitButtonCreateForm = stockView.querySelector('#submitBtnCreateForm');
     submitButtonCreateForm.addEventListener('click', function (e) {
@@ -22,12 +21,22 @@ export default () => {
         postItemStock();
     });
 
-    // Handler Functions
+    // Buttons Row COMPONENT
+    stockView.appendChild(stockComponent.stockBtnRow());
+
+    const refreshButton = stockView.querySelector('#refreshButton');
+    const updateStockButton = stockView.querySelector('#updateBtn');
+    refreshButton.addEventListener('click', getStock);
+    updateStockButton.addEventListener('click', updateStock);
+
+    // Inventory COMPONENT
+    stockView.appendChild(stockComponent.inventory());
+
+    // Stock logic 
     let stock = undefined;
 
-    const serverip = "127.0.0.1:3000";
-
     async function postItemStock() {
+        spinnerLoaderElement.style.display = 'flex';
         const valuesForm = document.forms.createItemStockForm.elements;
 
         const itemTemp = {
@@ -39,27 +48,56 @@ export default () => {
             ORIGINAL_PRICE: parseInt(valuesForm.price.value),
         }
 
-        await GatewayStock.postItemInventory(itemTemp);
-        getStock();
-    }
-
-    async function getStock() {
-        stock = await GatewayStock.inventory();
-        loadStock();
+        const response = await GatewayStock.postItemInventory(itemTemp);
+        if (response) {
+            const createForm = stockView.querySelector('#createItemStockForm');
+            createForm.reset();
+            getStock();
+        }
+        else {
+            alert("We have encountered an error trying to create an item !");
+        }
+        spinnerLoaderElement.style.display = 'none';
     }
 
     async function deleteItemStock(indexItem) {
+        spinnerLoaderElement.style.display = 'flex';
         const itemToDelete = stock[indexItem];
         const response = await GatewayStock.deleteItemInventory(itemToDelete.id);
         if (response) {
             const itemCard = document.getElementById(`item${indexItem}`);
             itemCard.remove();
         }
+        else {
+            alert("We have encountered an error trying to delete the selected item !");
+        }
+        spinnerLoaderElement.style.display = 'none';
     }
 
     async function updateStock() {
-        stock = await GatewayStock.updateItemsInventory();
-        loadStock();
+        spinnerLoaderElement.style.display = 'flex';
+        const response = await GatewayStock.updateItemsInventory();
+        if (response) {
+            stock = response;
+            loadStock();
+        }
+        else {
+            alert("We have encountered an error !");
+        }
+        spinnerLoaderElement.style.display = 'none';
+    }
+
+    async function getStock() {
+        spinnerLoaderElement.style.display = 'flex';
+        const response = await GatewayStock.inventory();
+        if (response) {
+            stock = response;
+            loadStock();
+        }
+        else {
+            alert("We have encountered an error while trying to load the inventory !");
+        }
+        spinnerLoaderElement.style.display = 'none';
     }
 
     function loadStock() {

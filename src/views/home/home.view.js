@@ -1,6 +1,5 @@
 import { homeComponent } from "../../components/home";
 
-
 export default () => {
     const homeView = document.createElement('div');
     homeView.setAttribute('id', 'homeContent');
