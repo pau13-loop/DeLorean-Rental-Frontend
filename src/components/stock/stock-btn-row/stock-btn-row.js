@@ -1,5 +1,5 @@
-import "./stockBtnRow.css";
-import stockBtnRow from './stockBtnRow.html';
+import "./stock-btn-row.css";
+import stockBtnRow from './stock-btn-row.html';
 
 export default () => {
     const stockBtnRowContainer = document.createElement('div');

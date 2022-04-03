@@ -6,5 +6,4 @@ export default () => {
     notFoundContainer.innerHTML = notFoundContent;
 
     return notFoundContainer;
-
 }
