@@ -3,7 +3,7 @@ import basketListItemsContent from './basket-list-items.html';
 
 export default () => {
     const basketListItemsContainer = document.createElement('div');
-    basketListItemsContainer.classList.add('basketList');
+    basketListItemsContainer.setAttribute('id', 'basketList');
     basketListItemsContainer.innerHTML = basketListItemsContent;
 
     return basketListItemsContainer;
