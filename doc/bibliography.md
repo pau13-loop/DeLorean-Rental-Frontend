@@ -1,16 +1,18 @@
 # Bibliography
 
-###### Prettier
+[**_README_**](../README.md)
+
+##### Prettier
 
 > https://prettier.io/docs/en/configuration.html
 
-###### Fetch and CORS by MDN Mozilla
+##### Fetch and CORS by MDN Mozilla
 
 > https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 
 > https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 
-###### Send an object by onClick function
+##### Send an object by onClick function
 
 > https://exerror.com/uncaught-syntaxerror-unexpected-end-of-input/
 
@@ -34,7 +36,7 @@
 
 > https://nodejs.org/docs/latest/api/modules.html
 
-###### Node FS library doc
+##### Node FS library doc
 
 > https://nodejs.org/api/fs.html#fsreadfilepath-options-callback
 
@@ -60,7 +62,7 @@
 
 > https://www.youtube.com/watch?v=D9avX-jtIPM&ab_channel=FaztCode
 
-###### Element.id is not a function (Error)
+##### Element.id is not a function (Error)
 
 > https://bobbyhadz.com/blog/javascript-setattribute-is-not-a-function
 
@@ -68,7 +70,7 @@
 
 > https://www.freecodecamp.org/news/javascript-dom-events-onclick-and-onload/
 
-###### e.preventDefault and e.stopPropagation
+##### e.preventDefault and e.stopPropagation
 
 > https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 
@@ -109,3 +111,13 @@
 ##### Session Storage
 
 > https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
+
+##### Webpack .env
+
+> https://stackoverflow.com/questions/30030031/passing-environment-dependent-variables-in-webpack
+
+> https://prateeksurana.me/blog/using-environment-variables-with-webpack/
+
+**[⬆ back to top](#bibliography)**
+
+---
