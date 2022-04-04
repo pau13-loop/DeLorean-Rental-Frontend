@@ -1,0 +1,10 @@
+#createItemStockForm {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sectionForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

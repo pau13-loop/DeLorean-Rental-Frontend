@@ -1,0 +1,36 @@
+.informationShoppingBasket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid red;
+    margin: 35px 0;
+}
+
+.importantInformationBasket {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.basketList {
+    list-style-type: none;
+}
+
+.basketItemList {
+    margin: 40px 0;
+}
+
+.itemTitle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.itemInfo {
+    margin-left: 25px;
+}
+
+.brandItemBasket {
+    margin: 0;
+}
+
+.trashIconBasket {}
