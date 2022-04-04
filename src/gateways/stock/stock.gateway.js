@@ -1,6 +1,6 @@
-const GatewayStock = (function singletonGatewayStock() {
-    const serverip = process.env.SERVER_IP;
+const { SERVER_IP } = require("../../utils/constants");
 
+const GatewayStock = (function singletonGatewayStock() {
     const miHeaders = new Headers();
 
     const _headerMaker = (method) => {
@@ -13,7 +13,7 @@ const GatewayStock = (function singletonGatewayStock() {
     }
 
     const inventory = () => {
-        return fetch(`http://${serverip}/vehicle`, _headerMaker('GET'))
+        return fetch(`http://${SERVER_IP}/vehicle`, _headerMaker('GET'))
             .then((response) => {
                 if (response.ok) {
                     console.log("Response Status:", response.status);
@@ -33,7 +33,7 @@ const GatewayStock = (function singletonGatewayStock() {
     }
 
     const deleteItemInventory = (idItem) => {
-        return fetch(`http://${serverip}/vehicle/delete/id/${idItem}`, _headerMaker('DELETE'))
+        return fetch(`http://${SERVER_IP}/vehicle/delete/id/${idItem}`, _headerMaker('DELETE'))
             .then((response) => {
                 if (response.ok) {
                     console.log("Response Status:", response.status);
@@ -51,7 +51,7 @@ const GatewayStock = (function singletonGatewayStock() {
     }
 
     const updateItemsInventory = () => {
-        return fetch(`http://${serverip}/vehicle/update/stock/discount`, _headerMaker('PUT'))
+        return fetch(`http://${SERVER_IP}/vehicle/update/stock/discount`, _headerMaker('PUT'))
             .then((response) => {
                 if (response.ok) {
                     console.log("Response Status:", response.status);
@@ -71,7 +71,7 @@ const GatewayStock = (function singletonGatewayStock() {
     }
 
     const postItemInventory = (newItem) => {
-        return fetch(`http://${serverip}/vehicle/create`, {
+        return fetch(`http://${SERVER_IP}/vehicle/create`, {
             method: "POST",
             mode: "cors",
             headers: {

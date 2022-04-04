@@ -4,12 +4,9 @@
     "description": "This is the frontend of the previous DeLorean rental backend created. This project is to understand how work JS in it's base level and how makes the communication with the DOM",
     "main": "/src/main.js",
     "scripts": {
-        "test": "test",
-        "start": "nodemon app.js",
-        "server": "nodemon ./pruebas-server/index.js",
-        "devstart": "nodemon ./bin/www",
-        "lint": "npm run lint",
-        "startclient": "nodemon server.js"
+        "build": "webpack --env production --mode production",
+        "dev": "npx webpack-dev-server --env development --mode development",
+        "lint": "npm run lint"
     },
     "repository": {
         "type": "git",
