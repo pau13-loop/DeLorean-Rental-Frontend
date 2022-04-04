@@ -1,0 +1,9 @@
+#basketHeader {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.iconShoppingTrolly {
+    font-size: 35px;
+}

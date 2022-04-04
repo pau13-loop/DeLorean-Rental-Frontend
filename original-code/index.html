@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <title>Project 2n Aval Client</title>
+</head>
+
+<body>
+
+    <div id="header">
+
+        <i class="iconHeader fa-solid fa-bars"></i>
+        <!-- //* navBar to change on hover -->
+        <!-- <i class="fa-solid fa-bars-staggered"></i> -->
+
+        <h1 class="titleHeader">DeLorean Rental</h1>
+
+        <!--TODO: Ponerlo en una función que mire la width -->
+        <!-- <button class="btnHeader">Book Now</button> -->
+
+    </div>
+
+    <div>
+        <form>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname">
+        </form>
+    </div>
+
+    <div class="buttonHandlers">
+        <div id="refreshButton" class="containerIconContent">
+            <i class="fa-solid fa-rotate iconRefresh"></i>
+        </div>
+
+        <div class="btnRow">
+            <button id="updateBtn" class="btn">
+                <p class="textBtn">
+                    Update Stock
+                </p>
+            </button>
+            <button class="btn">
+                <p class="textBtn">
+                    Add Vehicle
+                </p>
+            </button>
+        </div>
+    </div>
+
+    <div id="stockContent" class="stock">
+    </div>
+
+    <div id="footer">
+    </div>
+
+    <script src="index.js"></script>
+
+
+    <!-- <br id="main">
+    <h3 class="titleCard">Hello world!</h3></br>
+
+    <p>Esto tiene que ser una broma !</p>
+    <btn id="btn" onClick="clickHandle()">Click me</btn>
+    </div>
+    <script src="index.js"></script> -->
+
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>REST ejemplo</title>
+</head>
+
+<body>
+    <button id="inventario" onClick="clickHandle()">inventario</button>
+
+    <ul id="itemList">
+        <li>Aqui los items...</li>
+    </ul>
+
+    <script src="index.js">
+        // GET
+
+        // const inventButton = document.querySelector("#inventario");
+        // inventButton.addEventListener("click", inventario);
+
+        // function inventario() {
+
+        //     let serverip = "127.0.0.1:3000";
+
+        //     var miHeaders = new Headers();
+
+        //     var miInit = {
+        //         method: "GET",
+        //         mode: "cors",
+        //         // headers: {
+        //         //     'Content-Type': 'application/json'
+        //         // },
+        //         headers: miHeaders,
+        //         // cambiarlo a force- cache => carga del disco
+        //         cache: "default",
+        //     };
+
+        //     fetch(`http://${serverip}/vehicle`, miInit)
+        //         .then((response) => {
+        //             if (response.ok) {
+        //                 console.log("Response Status:", response.status);
+        //                 console.log("Reponse statuts text:", response.statusText);
+        //                 response.json().then((body) => logItems(body.data));
+        //             }
+        //             else {
+        //                 console.log("Response Status:", response.status);
+        //                 console.log("Reponse statuts text:", response.statusText);
+        //             }
+        //         })
+        //         .catch((error) => {
+        //             console.log(error.message);
+        //         });
+        // }
+
+        // // intentar cachear con la cabecera mirando network de chrome
+
+        // function logItems(items) {
+        //     const itemsList = document.querySelector("#itemList");
+        //     itemList.innerHTML = items
+        //         .map((item, i) => {
+        //             return `
+        //                 <li>
+        //                     <p id="item${i}"> ${item.model}
+        //                                     ${item.brand}</p>
+        //                 </li>
+        //                 `;
+        //         })
+        //         .join("");
+        // }
+
+    </script>
+</body>
+
+</html> -->

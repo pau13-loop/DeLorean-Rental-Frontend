@@ -1,0 +1,109 @@
+/* HTML ELEMENTS */
+
+html {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, lightblue, lightgreen);
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Arial";
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0;
+}
+
+/* SHARED STYLES */
+
+.btn {
+    width: 300px;
+    height: 150px;
+    border-radius: 25px;
+}
+
+/* HEADER */
+
+#header {
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: auto;
+    grid-template-areas: "burguer title btn";
+    border-bottom: 3px solid black;
+}
+
+.leftHandHeader {
+    display: flex;
+    align-items: center;
+}
+
+.iconHeader {
+    font-size: 45px;
+    grid-area: burguer;
+}
+
+.navigationLinks {
+    grid-area: burguer;
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+}
+
+.titleHeader {
+    font-size: 30px;
+    grid-area: title;
+    text-align: center;
+}
+
+#footer {
+    width: 100%;
+}
+
+.iconsCopyrightContainer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a4c5b1;
+}
+
+.copyrightListIcons {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    gap: 50px;
+    font-size: 18px;
+}
+
+.copyrightContainer {
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-color: #7e9f8a;
+}
+
+/* RESPONISVE */
+
+@media (min-width: 768px) {
+    #header {
+        width: 95%;
+        padding: 0 0 0 1rem;
+        border-bottom: 1px solid black;
+    }
+
+    .iconHeader {
+        font-size: 25px;
+        margin-left: 1rem;
+    }
+
+    .titleHeader {
+        font-size: 35px;
+    }
+}
