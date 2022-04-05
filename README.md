@@ -12,7 +12,7 @@ Good luck !
 [![webpack version](https://img.shields.io/badge/webpack-v.5.70.0-blueviolet)](https://webpack.js.org/)
 [![node version](https://img.shields.io/badge/node-v16.13.0-brightgreen)](https://nodejs.org/en/)
 [![npm version](https://img.shields.io/badge/npm-v8.1.0-critical)](https://www.npmjs.com/)
-[![version application](https://img.shields.io/badge/version-v1.0.0-informational)](https://github.com/pau13-loop/DeLorean-Rental-OLOO-JS/releases/tag/v1.0.0)
+[![version application](https://img.shields.io/badge/version-v1.0.0-informational)](https://github.com/pau13-loop/DeLorean-Rental-Frontend/releases/tag/v.1.0.0)
 
 <!-- Source: https://www.deloreanrental.com/ -->
 <p align="center">
