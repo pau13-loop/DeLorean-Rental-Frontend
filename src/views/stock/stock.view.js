@@ -26,8 +26,10 @@ export default () => {
 
     const refreshButton = stockView.querySelector('#refreshButton');
     const updateStockButton = stockView.querySelector('#updateBtn');
+    const restoreButton = stockView.querySelector('#showBasket');
     refreshButton.addEventListener('click', getStock);
     updateStockButton.addEventListener('click', updateStock);
+    restoreButton.addEventListener('click', getBasket);
 
     // Inventory COMPONENT
     stockView.appendChild(stockComponent.inventory());
@@ -48,6 +50,19 @@ export default () => {
 
     // Stock logic 
     let stock = undefined;
+
+    async function getStock() {
+        spinnerLoaderElement.style.display = 'flex';
+        const response = await GatewayStock.inventory();
+        if (response) {
+            stock = response;
+            loadStock();
+        }
+        else {
+            alert("We have encountered an error while trying to load the inventory !");
+        }
+        spinnerLoaderElement.style.display = 'none';
+    }
 
     async function postItemStock() {
         spinnerLoaderElement.style.display = 'flex';
@@ -101,17 +116,8 @@ export default () => {
         spinnerLoaderElement.style.display = 'none';
     }
 
-    async function getStock() {
-        spinnerLoaderElement.style.display = 'flex';
-        const response = await GatewayStock.inventory();
-        if (response) {
-            stock = response;
-            loadStock();
-        }
-        else {
-            alert("We have encountered an error while trying to load the inventory !");
-        }
-        spinnerLoaderElement.style.display = 'none';
+    function getBasket() {
+        window.location.href = 'http://localhost:8080/#/basket';
     }
 
     function loadStock() {

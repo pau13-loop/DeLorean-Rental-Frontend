@@ -13,7 +13,6 @@ export default () => {
 
     const spinnerLoaderElement = basketView.querySelector('#containerSpinnerLoader');
 
-
     function deleteBasketItem(indexItem) {
         spinnerLoaderElement.style.display = 'flex';
 
