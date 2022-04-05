@@ -35,9 +35,14 @@ export default () => {
     // Session Storage
     function addItemToLocalStorage(i) {
         if (window.confirm('Do you really want to add this item to your basket ?')) {
-            let basketList = JSON.parse(localStorage.getItem('basketList'));
-            basketList = [...basketList, stock[i]];
-            localStorage.setItem('basketList', JSON.stringify(basketList));
+            let basketList = JSON.parse(sessionStorage.getItem('basketList'));
+            if (basketList) {
+                basketList = [...basketList, stock[i]];
+            }
+            else {
+                basketList = [stock[i]];
+            }
+            sessionStorage.setItem('basketList', JSON.stringify(basketList));
         }
     }
 

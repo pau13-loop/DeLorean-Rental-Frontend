@@ -17,9 +17,9 @@ export default () => {
     function deleteBasketItem(indexItem) {
         spinnerLoaderElement.style.display = 'flex';
 
-        const itemsListBasket = JSON.parse(localStorage.getItem('basketList'));
+        const itemsListBasket = JSON.parse(sessionStorage.getItem('basketList'));
         itemsListBasket.splice(indexItem, 1);
-        localStorage.setItem('basketList', JSON.stringify(itemsListBasket));
+        sessionStorage.setItem('basketList', JSON.stringify(itemsListBasket));
 
         const basketItem = document.getElementById(`basketItem${indexItem}`);
         basketItem.remove();
@@ -29,7 +29,7 @@ export default () => {
     }
 
     function loadBasket() {
-        const itemsBasket = JSON.parse(localStorage.getItem('basketList'));
+        const itemsBasket = JSON.parse(sessionStorage.getItem('basketList'));
         const basketItemsList = basketView.querySelector('.basketList');
 
         if (itemsBasket.length > 0) {
